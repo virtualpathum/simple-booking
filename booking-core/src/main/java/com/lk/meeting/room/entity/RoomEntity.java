@@ -89,6 +89,9 @@ public class RoomEntity extends AbstractEntity {
 
 	public void setBooking(BookingEntity booking) {
 		this.booking = booking;
+		if (null != booking && booking.getRoom() != this) {
+			booking.setRoom(this);
+		}
 	}
 
 	@Override
