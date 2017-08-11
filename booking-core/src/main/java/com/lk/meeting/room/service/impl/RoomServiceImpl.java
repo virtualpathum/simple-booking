@@ -1,33 +1,48 @@
+/*
+ * 
+ */
 package com.lk.meeting.room.service.impl;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.lk.meeting.room.entity.RoomEntity;
-import com.lk.meeting.room.mapper.RoomMapper;
+import com.lk.meeting.room.entity.MeetingRoomEntity;
+import com.lk.meeting.room.mapper.MeetingRoomMapper;
 import com.lk.meeting.room.repo.RoomRepository;
-import com.lk.meeting.room.resource.RoomResource;
+import com.lk.meeting.room.resource.MeetingRoomResource;
 import com.lk.meeting.room.service.RoomService;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class RoomServiceImpl.
+ */
 @Named("roomService")
 public class RoomServiceImpl implements RoomService {
 	
+	/** The repo. */
 	@Inject
 	RoomRepository repo;
 	
+	/** The mapper. */
 	@Inject
-	RoomMapper mapper;
+	MeetingRoomMapper mapper;
 
+	/* (non-Javadoc)
+	 * @see com.lk.meeting.room.service.RoomService#saveOrUpdate(com.lk.meeting.room.resource.RoomResource)
+	 */
 	@Override
-	public RoomResource saveOrUpdate(RoomResource resource) {
-		RoomEntity entity = mapper.asEntity(resource);
+	public MeetingRoomResource saveOrUpdate(MeetingRoomResource resource) {
+		MeetingRoomEntity entity = mapper.asEntity(resource);
 		return mapper.asResource(repo.saveAndFlush(entity));
 	}
 
+	/* (non-Javadoc)
+	 * @see com.lk.meeting.room.service.RoomService#findById(java.lang.Long)
+	 */
 	@Override
-	public RoomResource findById(Long Id) {
-		RoomEntity entity = repo.findOne(Id);
+	public MeetingRoomResource findById(Long Id) {
+		MeetingRoomEntity entity = repo.findOne(Id);
 		return mapper.asResource(entity);
 	}
 

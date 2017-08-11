@@ -1,3 +1,6 @@
+/**
+ * Created On : 10 Aug 2017
+ */
 package com.lk.meeting.room.config;
 
 import java.util.TimeZone;
@@ -12,8 +15,10 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
-
+/**
+ * @author virtualpathum
+ * The Class RootConfig.
+ */
 @Configuration
 @Import({ SysConfig.class})
 @ComponentScan(basePackages = { 
@@ -21,6 +26,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 	    "com.lk.meeting.room.service" })
 public class RootConfig {
 	
+	/**
+	 * Jackson object mapper.
+	 *
+	 * @return the object mapper
+	 */
 	@Bean
 	public ObjectMapper jacksonObjectMapper() {
 		Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder();

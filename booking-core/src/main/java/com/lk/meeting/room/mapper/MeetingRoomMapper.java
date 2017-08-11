@@ -1,7 +1,10 @@
+/*
+ * 
+ */
 package com.lk.meeting.room.mapper;
 
-import com.lk.meeting.room.entity.RoomEntity;
-import com.lk.meeting.room.resource.RoomResource;
+import com.lk.meeting.room.entity.MeetingRoomEntity;
+import com.lk.meeting.room.resource.MeetingRoomResource;
 
 import fr.xebia.extras.selma.Field;
 import fr.xebia.extras.selma.IgnoreMissing;
@@ -11,14 +14,30 @@ import fr.xebia.extras.selma.Maps;
 
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface RoomMapper.
+ */
 @Mapper(withIoC = IoC.SPRING,
 withCustomFields = { @Field({"id", "resourceId"})})
-public interface RoomMapper {
+public interface MeetingRoomMapper {
 	
+	/**
+	 * As resource.
+	 *
+	 * @param entity the entity
+	 * @return the room resource
+	 */
 	@Maps(withIgnoreMissing = IgnoreMissing.DESTINATION)
-		RoomResource asResource(RoomEntity entity);
+		MeetingRoomResource asResource(MeetingRoomEntity entity);
 	
+	/**
+	 * As entity.
+	 *
+	 * @param resource the resource
+	 * @return the meeting room entity
+	 */
 	@Maps(withIgnoreMissing = IgnoreMissing.SOURCE)
-		RoomEntity asEntity(RoomResource resource);
+		MeetingRoomEntity asEntity(MeetingRoomResource resource);
 
 }

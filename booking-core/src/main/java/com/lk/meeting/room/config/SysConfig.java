@@ -1,3 +1,6 @@
+/**
+ * Created On : 10 Aug 2017
+ */
 package com.lk.meeting.room.config;
 
 import java.io.IOException;
@@ -25,6 +28,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 // TODO: Auto-generated Javadoc
 /**
+ * @author virtualpathum
  * The Class SysConfig.
  */
 @Configuration
@@ -42,9 +46,14 @@ public class SysConfig {
 	/** The Constant PERSISTENCE_PROPERTIES. */
 	public static final String PERSISTENCE_PROPERTIES = "meeting-room-core-persistence.properties";
 	
+	/** The Constant jndiNamespace. */
 	public static final String jndiNamespace = "java:comp/env/jdbc/meeting-room";
 	
-	/** The data source. */
+	/**
+	 *  The data source.
+	 *
+	 * @return the data source
+	 */
 	/*@Inject
 	private DataSource dataSource;*/
 	
@@ -65,7 +74,7 @@ public class SysConfig {
 	 *
 	 * @return the entity manager factory
 	 * @throws IOException Signals that an I/O exception has occurred.
-	 * @throws NamingException 
+	 * @throws NamingException the naming exception
 	 */
 	@Bean
 	public EntityManagerFactory entityManagerFactory() throws IOException, NamingException{
@@ -97,10 +106,9 @@ public class SysConfig {
 	/**
 	 * Tx manager.
 	 *
-	 * @param entityManagerFactory the entity manager factory
 	 * @return the platform transaction manager
-	 * @throws IOException 
-	 * @throws NamingException 
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @throws NamingException the naming exception
 	 */
 	@Bean
     public PlatformTransactionManager transactionManager() throws IOException, NamingException {

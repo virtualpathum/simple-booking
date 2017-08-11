@@ -1,11 +1,30 @@
+/*
+ * 
+ */
 package com.lk.meeting.room.service;
 
-import com.lk.meeting.room.resource.RoomResource;
+import com.lk.meeting.room.resource.MeetingRoomResource;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface RoomService.
+ */
 public interface RoomService {
 	
-	RoomResource findById(Long Id);
+	/**
+	 * Find by id.
+	 *
+	 * @param Id the id
+	 * @return the room resource
+	 */
+	MeetingRoomResource findById(Long Id);
 	
-	RoomResource saveOrUpdate (RoomResource resource);
+	/**
+	 * Save or update.
+	 *
+	 * @param resource the resource
+	 * @return the room resource
+	 */
+	MeetingRoomResource saveOrUpdate (MeetingRoomResource resource);
  
 }
