@@ -1,12 +1,12 @@
 package com.lk.meeting.room.resource;
 
-public class RoomResource extends AbstractResource<Long> {
+public class MeetingRoomResource extends AbstractResource<Long> {
 
-	public RoomResource(Long resourceId) {
+	public MeetingRoomResource(Long resourceId) {
 		super(resourceId);
 	}
 	
-	public RoomResource(){
+	public MeetingRoomResource(){
 		super(null);
 	}
 
