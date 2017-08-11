@@ -1,3 +1,4 @@
+package com.lk.meeting.room.controller.test;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,10 +13,10 @@ import com.lk.meeting.room.web.controller.RoomController;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { RootConfig.class})
-public class StudentTest {
+public class RoomTest {
 	
 	@Autowired
-	RoomService studentService;
+	RoomService roomService;
 
 	@Test
 	public void test() {

@@ -11,7 +11,7 @@
   
   	<dependency>
 		<groupId>com.lk.meeting.room.core</groupId>
-		<artifactId>meeting-room-core</artifactId>
+		<artifactId>booking-core</artifactId>
 		<version>0.0.1-SNAPSHOT </version>
 	</dependency>
 	 

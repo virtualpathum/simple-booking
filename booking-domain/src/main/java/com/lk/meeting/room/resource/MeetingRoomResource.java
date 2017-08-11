@@ -10,21 +10,11 @@ public class MeetingRoomResource extends AbstractResource<Long> {
 		super(null);
 	}
 
-	private Boolean isRoomAvailable;
-	
 	private Boolean isProjectorAvailable;
 	
 	private Integer numberOfSeats;
 	
 	private String roomLocation;
-
-	public Boolean getIsRoomAvailable() {
-		return isRoomAvailable;
-	}
-
-	public void setIsRoomAvailable(Boolean isRoomAvailable) {
-		this.isRoomAvailable = isRoomAvailable;
-	}
 
 	public Boolean getIsProjectorAvailable() {
 		return isProjectorAvailable;
