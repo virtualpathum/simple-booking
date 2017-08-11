@@ -9,24 +9,28 @@ import javax.inject.Named;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import com.lk.meeting.room.entity.BookingEntity;
 import com.lk.meeting.room.entity.MeetingRoomEntity;
-import com.lk.meeting.room.mapper.BookingMapper;
 import com.lk.meeting.room.mapper.MeetingRoomMapper;
-import com.lk.meeting.room.repo.BookingRepository;
 import com.lk.meeting.room.repo.MeetingRoomRepository;
-import com.lk.meeting.room.resource.BookingResource;
 import com.lk.meeting.room.resource.MeetingRoomResource;
-import com.lk.meeting.room.service.MeetingRoomService;
 import com.lk.meeting.room.web.resource.finder.MeetingRoomResourceFinder;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MeetingRoomResourceFinderImpl.
+ */
 @Named("roomResourceFinder")
 public class MeetingRoomResourceFinderImpl extends AbstractResourceFinder<MeetingRoomResource, MeetingRoomEntity, MeetingRoomRepository, Long> implements MeetingRoomResourceFinder {
 
+	/** The mapper. */
 	private MeetingRoomMapper mapper;
+	
 	/**
-	 * @param repo
+	 * Instantiates a new meeting room resource finder impl.
+	 *
+	 * @param repo the repo
+	 * @param mapper the mapper
 	 */
 	@Inject
 	public MeetingRoomResourceFinderImpl(MeetingRoomRepository repo, MeetingRoomMapper mapper) {

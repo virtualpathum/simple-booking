@@ -2,7 +2,6 @@ package com.lk.meeting.room.web.controller;
 
 import javax.inject.Inject;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,20 +15,38 @@ import com.lk.meeting.room.resource.UserResource;
 import com.lk.meeting.room.service.UserService;
 import com.lk.meeting.room.web.resource.finder.UserResourceFinder;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UserController.
+ */
 @RestController
 @RequestMapping("/users")
 public class UserController extends AbstractController {
-	
+
+	/** The resource finder. */
 	private UserResourceFinder resourceFinder;
 	
+	/** The service. */
 	private UserService service;
 	
+	/**
+	 * Instantiates a new user controller.
+	 *
+	 * @param resourceFinder the resource finder
+	 * @param service the service
+	 */
 	@Inject
 	public UserController(UserResourceFinder resourceFinder, UserService service ){
 		this.resourceFinder = resourceFinder;
 		this.service = service;
 	}
 	
+	/**
+	 * Find one.
+	 *
+	 * @param id the id
+	 * @return the user resource
+	 */
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET,
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
@@ -37,10 +54,15 @@ public class UserController extends AbstractController {
 		return resourceFinder.findOne(id);
 	}
 	
+	/**
+	 * Creates the.
+	 *
+	 * @param resource the resource
+	 * @return the user resource
+	 */
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public UserResource create(@RequestBody UserResource resource) {
-		System.out.println("userService///"+service);
 		return service.saveOrUpdate(resource);
 	}
 

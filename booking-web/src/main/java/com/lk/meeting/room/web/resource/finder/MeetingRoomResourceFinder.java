@@ -7,14 +7,19 @@ import java.util.List;
 
 import com.lk.meeting.room.resource.MeetingRoomResource;
 
-
-
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface MeetingRoomResourceFinder.
+ */
 public interface MeetingRoomResourceFinder extends ResourceFinder<MeetingRoomResource, Long> {
 	
-	/* (non-Javadoc)
-	 * @see com.lk.meeting.room.service.RoomService#getAvailableRooms(java.util.Date)
-	 */
 	
+	/**
+	 * Gets the available rooms.
+	 *
+	 * @param bookingDateTime the booking date time
+	 * @return the available rooms
+	 */
 	List<MeetingRoomResource> getAvailableRooms(Date bookingDateTime);
 	
 }

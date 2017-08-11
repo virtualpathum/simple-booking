@@ -5,7 +5,6 @@ package com.lk.meeting.room.entity;
 
 import java.io.Serializable;
 
-// TODO: Auto-generated Javadoc
 /**
  * @author virtualpathum
  * The Class AbstractEntity.

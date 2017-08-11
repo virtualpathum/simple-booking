@@ -11,10 +11,19 @@ import com.lk.meeting.room.resource.BookingResource;
  */
 public interface BookingService {
 	
-	
+	/**
+	 * Save or update.
+	 *
+	 * @param booking the booking
+	 * @return the booking resource
+	 */
 	BookingResource saveOrUpdate(BookingResource booking);
 	
+	/**
+	 * Cancel booking.
+	 *
+	 * @param bookingId the booking id
+	 */
 	void cancelBooking(Long bookingId);
 	
-
 }

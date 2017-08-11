@@ -25,16 +25,22 @@ public abstract class AbstractResourceFinder<R extends AbstractResource<ID>, E,
 											 ID extends Serializable>
 											 implements ResourceFinder<R, ID> {
 
+	/** The repo. */
 	protected S repo;
   
 
+	/**
+	 * Instantiates a new abstract resource finder.
+	 *
+	 * @param repo the repo
+	 */
 	public AbstractResourceFinder(S repo) {
 		this.repo = repo;
 	
 	}
 
 	/** {@inheritDoc} */
-	//@Override
+
 	public R findOne(ID id) {
 		E entity = repo.findOne(id);
 		return toResource(entity);
@@ -43,14 +49,18 @@ public abstract class AbstractResourceFinder<R extends AbstractResource<ID>, E,
 	
 
 	/** {@inheritDoc} */
-	//@Override
 	public Page<R> findAll(Pageable pageable) {
 		Page<E> page = repo.findAll(pageable);
 		return toResources(page, pageable);
 	}
 
-	
-
+	/**
+	 * To resources.
+	 *
+	 * @param entities the entities
+	 * @param pageable the pageable
+	 * @return the page
+	 */
 	protected Page<R> toResources(
 			Page<E> entities, Pageable pageable) {
 
@@ -59,6 +69,12 @@ public abstract class AbstractResourceFinder<R extends AbstractResource<ID>, E,
 	}
 
 
+	/**
+	 * To resources.
+	 *
+	 * @param entities the entities
+	 * @return the list
+	 */
 	protected List<R> toResources(List<E> entities) {
 		if (entities.isEmpty()) { return Collections.emptyList(); }
 
@@ -70,12 +86,22 @@ public abstract class AbstractResourceFinder<R extends AbstractResource<ID>, E,
 		return resources;
 	}
 
-
+	/**
+	 * To resource.
+	 *
+	 * @param entity the entity
+	 * @return the r
+	 */
 	protected R _toResource(E entity) {
 		return null == entity?null:toResource(entity);
 	}
 
-
+	/**
+	 * To resource.
+	 *
+	 * @param entity the entity
+	 * @return the r
+	 */
 	protected abstract R toResource(E entity);
 
 }

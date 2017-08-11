@@ -1,18 +1,14 @@
-/*
- * 
+/**
+ * Created On : 10 Aug 2017
  */
 package com.lk.meeting.room.service;
 
 import com.lk.meeting.room.resource.UserResource;
-
-// TODO: Auto-generated Javadoc
 /**
  * The Interface UserService.
+ * @author virtualpathum
  */
 public interface UserService {
-	
-	
-	
 	/**
 	 * Save or update.
 	 *

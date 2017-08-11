@@ -17,21 +17,24 @@ import com.lk.meeting.room.resource.BookingResource;
 import com.lk.meeting.room.web.resource.finder.BookingResourceFinder;
 
 /**
+ * The Class BookingResourceFinderImpl.
  * @author virtualpathum
- *
  */
 @Named("bookingResourceFinder")
 public class BookingResourceFinderImpl extends AbstractResourceFinder<BookingResource, BookingEntity, BookingRepository, Long> implements BookingResourceFinder {
-
+	/** The mapper. */
 	private BookingMapper mapper;
+	
 	/**
-	 * @param repo
+	 * Instantiates a new booking resource finder impl.
+	 *
+	 * @param repo the repo
+	 * @param mapper the mapper
 	 */
 	@Inject
 	public BookingResourceFinderImpl(BookingRepository repo, BookingMapper mapper) {
 		super(repo);
 		this.mapper = mapper;
-		// TODO Auto-generated constructor stub
 	}
 
 	/* (non-Javadoc)
@@ -66,7 +69,4 @@ public class BookingResourceFinderImpl extends AbstractResourceFinder<BookingRes
 		return toResources(list);
 	}
 
-	
-
-	
 }

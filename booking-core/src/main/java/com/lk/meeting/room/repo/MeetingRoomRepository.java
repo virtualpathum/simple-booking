@@ -1,3 +1,5 @@
+/**
+ * Created On : 11 Aug 2017
 /*
  * 
  */
@@ -13,13 +15,13 @@ import org.springframework.data.repository.query.Param;
 import com.lk.meeting.room.entity.MeetingRoomEntity;
 
 /**
- * The Interface RoomRepository.
+ * The Interface MeetingRoomRepository.
+ * @author virtualpathum
  */
 public interface MeetingRoomRepository extends JpaRepository<MeetingRoomEntity, Long> {
 	
-	@Query("SELECT m from MeetingRoomEntity m INNER JOIN m.bookings b where m.id = b.room.id and b.bookingDateTime != :bookingDateTime")
+	@Query("SELECT m from MeetingRoomEntity m where m.id NOT IN"
+			+" (SELECT a.id from MeetingRoomEntity a INNER JOIN a.bookings c"
+			+" where a.id = c.room.id and c.bookingDateTime = :bookingDateTime)")
 	List<MeetingRoomEntity> getAvailableRooms(@Param("bookingDateTime") Date bookingDateTime);
-	
-	
-
 }

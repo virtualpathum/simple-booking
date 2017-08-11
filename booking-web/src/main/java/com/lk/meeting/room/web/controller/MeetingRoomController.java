@@ -18,14 +18,26 @@ import com.lk.meeting.room.resource.MeetingRoomResource;
 import com.lk.meeting.room.service.MeetingRoomService;
 import com.lk.meeting.room.web.resource.finder.MeetingRoomResourceFinder;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MeetingRoomController.
+ */
 @RestController
 @RequestMapping("/rooms")
 public class MeetingRoomController extends AbstractController {
 	
+	/** The resource finder. */
 	private MeetingRoomResourceFinder resourceFinder;
 	
+	/** The service. */
 	private MeetingRoomService service;
 	
+	/**
+	 * Instantiates a new meeting room controller.
+	 *
+	 * @param roomResourceFinder the room resource finder
+	 * @param roomService the room service
+	 */
 	@Inject
 	public MeetingRoomController(MeetingRoomResourceFinder roomResourceFinder, MeetingRoomService roomService){
 		this.resourceFinder = roomResourceFinder;
@@ -33,10 +45,18 @@ public class MeetingRoomController extends AbstractController {
 	}
 	
 	
-	public MeetingRoomController(){
-		
-	}
+	/**
+	 * Instantiates a new meeting room controller.
+	 */
+	public MeetingRoomController(){}
 	
+	/**
+	 * Find one.
+	 *
+	 * @param id the id
+	 * @return the meeting room resource
+	 */
+
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET,
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
@@ -44,6 +64,13 @@ public class MeetingRoomController extends AbstractController {
 		return resourceFinder.findOne(id);
 	}
 	
+	/**
+	 * Gets the available rooms.
+	 *
+	 * @param bookingDateTime the booking date time
+	 * @return the available rooms
+	 */
+
 	@RequestMapping(value = "/available", method = RequestMethod.GET,
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
@@ -51,6 +78,13 @@ public class MeetingRoomController extends AbstractController {
 		return resourceFinder.getAvailableRooms(bookingDateTime);
 	}
 	
+	/**
+	 * Creates the.
+	 *
+	 * @param resource the resource
+	 * @return the meeting room resource
+	 */
+
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public MeetingRoomResource create(@RequestBody MeetingRoomResource resource) {

@@ -6,16 +6,12 @@ package com.lk.meeting.room.config;
 import java.io.IOException;
 import java.util.Properties;
 
-import javax.inject.Inject;
-import javax.naming.Context;
-import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -26,12 +22,12 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-// TODO: Auto-generated Javadoc
 /**
  * @author virtualpathum
  * The Class SysConfig.
  */
 @Configuration
+//TODO:Need to fix
 //@Import({ DatabaseProfile.class})
 @EnableJpaRepositories(basePackages = {"com.lk.meeting.room.repo" })
 @EnableTransactionManagement
@@ -44,21 +40,21 @@ public class SysConfig {
 	private static final String[] JPA_ENTITY_PACKAGES = { "com.lk.meeting.room.entity" };
 	
 	/** The Constant PERSISTENCE_PROPERTIES. */
-	public static final String PERSISTENCE_PROPERTIES = "meeting-room-core-persistence.properties";
+	public static final String PERSISTENCE_PROPERTIES = "persistence.properties";
 	
 	/** The Constant jndiNamespace. */
 	public static final String jndiNamespace = "java:comp/env/jdbc/meeting-room";
+	
 	
 	/**
 	 *  The data source.
 	 *
 	 * @return the data source
 	 */
-	/*@Inject
-	private DataSource dataSource;*/
-	
+	// TODO : create datasource in context.xml and give lookup name using jndi
+	// and inject the datasource here
 	@Bean
-	DataSource dataSource() {
+	public DataSource dataSource() {
 	    DriverManagerDataSource dataSource = new DriverManagerDataSource();
 	    dataSource.setDriverClassName("org.postgresql.Driver");
 
@@ -68,6 +64,7 @@ public class SysConfig {
 
 	    return dataSource;
 	}
+	
 	
 	/**
 	 * Gets the entity manager factory.
@@ -85,7 +82,7 @@ public class SysConfig {
 		containerEntityManagerFactoryBean.setPackagesToScan(SysConfig.JPA_ENTITY_PACKAGES);
 		containerEntityManagerFactoryBean.setDataSource(dataSource());
 		containerEntityManagerFactoryBean.setJpaProperties(getJpaProperties());
-		//containerEntityManagerFactoryBean.setPersistenceUnitName(SysConfig.PERSISTENCE_UNIT_NAME);
+		containerEntityManagerFactoryBean.setPersistenceUnitName(SysConfig.PERSISTENCE_UNIT_NAME);
 		containerEntityManagerFactoryBean.afterPropertiesSet();
 		return containerEntityManagerFactoryBean.getObject();
 
@@ -104,7 +101,7 @@ public class SysConfig {
 	}
 	
 	/**
-	 * Tx manager.
+	 * transactionManager.
 	 *
 	 * @return the platform transaction manager
 	 * @throws IOException Signals that an I/O exception has occurred.

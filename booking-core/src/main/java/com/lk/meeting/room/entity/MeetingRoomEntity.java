@@ -13,15 +13,13 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-// TODO: Auto-generated Javadoc
 /**
- * @author virtualpathum
  * The Class MeetingRoomEntity.
+ * @author virtualpathum
  */
 @Entity
 @Table(name = "tbl_meeting_room")

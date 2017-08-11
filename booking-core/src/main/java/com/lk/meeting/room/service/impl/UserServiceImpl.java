@@ -1,5 +1,5 @@
-/*
- * 
+/**
+ * Created On : 10 Aug 2017
  */
 package com.lk.meeting.room.service.impl;
 
@@ -12,9 +12,9 @@ import com.lk.meeting.room.repo.UserRepository;
 import com.lk.meeting.room.resource.UserResource;
 import com.lk.meeting.room.service.UserService;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class UserServiceImpl.
+ * @author virtualpathum
  */
 @Named("userService")
 public class UserServiceImpl implements UserService {
@@ -26,8 +26,6 @@ public class UserServiceImpl implements UserService {
 	/** The mapper. */
 	@Inject
 	UserMapper mapper;
-
-	
 
 	/* (non-Javadoc)
 	 * @see com.lk.meeting.room.service.UserService#saveOrUpdate(com.lk.meeting.room.resource.UserResource)

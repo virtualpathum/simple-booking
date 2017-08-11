@@ -1,5 +1,7 @@
 package com.lk.meeting.room.controller.test;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import java.util.Date;
 import java.util.List;
 
@@ -10,33 +12,36 @@ import org.junit.Test;
 import com.lk.meeting.room.resource.MeetingRoomResource;
 import com.lk.meeting.room.web.controller.MeetingRoomController;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MeetingRoomControllerTest.
+ */
 public class MeetingRoomControllerTest extends AbstractControllerTest {
 	
 	@Inject
 	MeetingRoomController meetingRoomController;
-
-
+	
+	/**
+	 * Test.
+	 */
 	@Test
-	public void test() {
-				
+	public void testCreateRoomMethod() {
+	
 		MeetingRoomResource resource = new MeetingRoomResource();
 		resource.setIsProjectorAvailable(true);
 		resource.setNumberOfSeats(10);
 		resource.setRoomLocation("1st Floor");
-		meetingRoomController.create(resource);
+		
+		MeetingRoomResource created = meetingRoomController.create(resource);
+		assertNotNull(created);
 		
 		
 	}
 
 	@Test
-	public void test2() {
+	public void testGetAvailableRoomsMethod() {
 				
-	
-		
 		List<MeetingRoomResource> list = meetingRoomController.getAvailableRooms(new Date());
-		for(MeetingRoomResource r:list){
-			System.out.println("room id"+r.getResourceId());
-		}
-		System.out.println("list //"+list.size());
+		assertEquals(1,list.size());
 	}
 }

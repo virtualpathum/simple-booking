@@ -9,12 +9,21 @@ import com.lk.meeting.room.repo.UserRepository;
 import com.lk.meeting.room.resource.UserResource;
 import com.lk.meeting.room.web.resource.finder.UserResourceFinder;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UserResourceFinderImpl.
+ */
 @Named("userResourceFinder")
 public class UserResourceFinderImpl extends AbstractResourceFinder<UserResource, UserEntity, UserRepository, Long> implements UserResourceFinder {
 
+	/** The mapper. */
 	private UserMapper mapper;
+	
 	/**
-	 * @param repo
+	 * Instantiates a new user resource finder impl.
+	 *
+	 * @param repo the repo
+	 * @param mapper the mapper
 	 */
 	@Inject
 	public UserResourceFinderImpl(UserRepository repo, UserMapper mapper) {

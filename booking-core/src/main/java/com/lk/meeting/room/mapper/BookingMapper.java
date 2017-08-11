@@ -12,10 +12,8 @@ import fr.xebia.extras.selma.IoC;
 import fr.xebia.extras.selma.Mapper;
 import fr.xebia.extras.selma.Maps;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Interface BookingMapper.
- *
  * @author virtualpathum
  */
 @Mapper(withIoC = IoC.SPRING,
@@ -40,9 +38,23 @@ public interface BookingMapper {
 	@Maps(withIgnoreMissing = IgnoreMissing.SOURCE)
 	BookingEntity asEntity(BookingResource resource);
 	
+	/**
+	 * Update resource.
+	 *
+	 * @param entity the entity
+	 * @param resource the resource
+	 * @return the booking resource
+	 */
 	@Maps(withIgnoreMissing = IgnoreMissing.DESTINATION)
 	BookingResource updateResource(BookingEntity entity, BookingResource resource);
 	
+	/**
+	 * Update entity.
+	 *
+	 * @param resource the resource
+	 * @param entity the entity
+	 * @return the booking entity
+	 */
 	@Maps(withIgnoreMissing = IgnoreMissing.SOURCE)
 	BookingEntity updateEntity(BookingResource resource, BookingEntity entity);
 }

@@ -12,7 +12,6 @@ import com.lk.meeting.room.repo.BookingRepository;
 import com.lk.meeting.room.resource.BookingResource;
 import com.lk.meeting.room.service.BookingService;
 
-
 /**
  * @author virtualpathum
  *
@@ -68,9 +67,5 @@ public class BookingServiceImpl implements BookingService {
 		entity= repo.saveAndFlush(entity);
 		return mapper.updateResource(entity, resource);
 	}
-
-
-
-	
 
 }

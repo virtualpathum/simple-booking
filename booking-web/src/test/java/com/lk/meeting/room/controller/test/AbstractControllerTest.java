@@ -12,8 +12,8 @@ import com.lk.meeting.room.config.RootConfig;
 import com.lk.meeting.room.web.config.WebMvcConfig;
 
 /**
+ * The Class AbstractControllerTest.
  * @author virtualpathum
- *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {WebMvcConfig.class, RootConfig.class})

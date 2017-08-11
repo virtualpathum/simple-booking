@@ -1,13 +1,16 @@
-/*
- * 
+/**
+ * Created On : 10 Aug 2017
  */
 package com.lk.meeting.room.service;
 
+import java.util.Date;
+import java.util.List;
+
 import com.lk.meeting.room.resource.MeetingRoomResource;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Interface RoomService.
+ * @author virtualpathum
  */
 public interface MeetingRoomService {
 		
@@ -18,6 +21,7 @@ public interface MeetingRoomService {
 	 * @return the room resource
 	 */
 	MeetingRoomResource saveOrUpdate (MeetingRoomResource resource);
-	
+
+	List<MeetingRoomResource> getAvailableRooms(Date bookingDateTime);
  
 }

@@ -8,32 +8,30 @@
   <description>Sample Meeting Room Management Application</description>
   
   <dependencies>
-  
-  	<dependency>
-		<groupId>com.lk.meeting.room.core</groupId>
-		<artifactId>booking-core</artifactId>
-		<version>0.0.1-SNAPSHOT </version>
-	</dependency>
-	 
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-context</artifactId>
-        <version>4.3.10.RELEASE</version>
-    </dependency>
-    
-	<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
-	<dependency>
-	    <groupId>org.springframework</groupId>
-	    <artifactId>spring-webmvc</artifactId>
-	    <version>4.3.10.RELEASE</version>
-	</dependency>
-	<dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>javax.servlet-api</artifactId>
-    <version>3.0.1</version>
-</dependency>
+  		<dependency>
+			<groupId>com.lk.meeting.room.core</groupId>
+			<artifactId>booking-core</artifactId>
+			<version>0.0.1-SNAPSHOT </version>
+		</dependency>
 
-    
-</dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>4.3.10.RELEASE</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>4.3.10.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+
+
+	</dependencies>
 
 </project>

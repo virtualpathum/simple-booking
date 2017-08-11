@@ -12,11 +12,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
-// TODO: Auto-generated Javadoc
 /**
- * @author virtualpathum
  * The Class UserEntity.
+ * @author virtualpathum
  */
 @Entity
 @Table(name = "tbl_user")

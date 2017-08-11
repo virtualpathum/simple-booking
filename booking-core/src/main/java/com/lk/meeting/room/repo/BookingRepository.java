@@ -13,6 +13,7 @@ import com.lk.meeting.room.entity.BookingEntity;
  * @author virtualpathum
  *
  */
+// TODO : Remove below repository methods - extends QueryDslPredicateExecutor and implement predicates
 public interface BookingRepository extends JpaRepository<BookingEntity, Long> {
 
 	List<BookingEntity> findByUserId(Long userId);

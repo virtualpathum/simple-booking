@@ -7,6 +7,7 @@ package com.lk.meeting.room.repo.predicate;
  * @author virtualpathum
  *
  */
+//TODO : add implementation for QueryDSL predicates
 public class BookingRepoPredicate{
 
 }

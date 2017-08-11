@@ -26,7 +26,10 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 @ComponentScan(basePackages = { "com.lk.meeting.room.web" })
 public class WebMvcConfig extends WebMvcConfigurerAdapter{
 	
-	/** (non-Javadoc)
+	/**
+	 *  (non-Javadoc).
+	 *
+	 * @param configurer the configurer
 	 * @see org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter#configureDefaultServletHandling(org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer)
 	 */
 	@Override
@@ -34,7 +37,10 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter{
 		configurer.enable();
 	}
 	
-	/** (non-Javadoc)
+	/**
+	 *  (non-Javadoc).
+	 *
+	 * @param converters the converters
 	 * @see org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter#configureMessageConverters(java.util.List)
 	 */
 	@Override

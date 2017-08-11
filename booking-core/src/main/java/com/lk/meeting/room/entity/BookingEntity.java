@@ -4,6 +4,7 @@
 package com.lk.meeting.room.entity;
 
 import java.util.Date;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +20,6 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
-// TODO: Auto-generated Javadoc
 /**
  * @author virtualpathum
  * The Class BookingEntity.
@@ -129,6 +129,33 @@ public class BookingEntity extends AbstractEntity {
 		this.room = room;
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+			return Objects.hash(this.id);
+	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+
+		if (obj instanceof BookingEntity) {
+			BookingEntity other = (BookingEntity) obj;
+			return Objects.equals(this.hashCode(), other.hashCode());
+		}
+		return false;
+	}
+
 	@Override
 	public String toString() {
 		StringBuffer sb = new StringBuffer();

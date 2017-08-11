@@ -1,5 +1,5 @@
-/*
- * 
+/**
+ * Created On : 10 Aug 2017
  */
 package com.lk.meeting.room.service.impl;
 
@@ -15,10 +15,9 @@ import com.lk.meeting.room.repo.MeetingRoomRepository;
 import com.lk.meeting.room.resource.MeetingRoomResource;
 import com.lk.meeting.room.service.MeetingRoomService;
 
-
-// TODO: Auto-generated Javadoc
 /**
  * The Class RoomServiceImpl.
+ * @author virtualpathum
  */
 @Named("roomService")
 public class MeetingRoomServiceImpl implements MeetingRoomService {
@@ -40,8 +39,21 @@ public class MeetingRoomServiceImpl implements MeetingRoomService {
 		return mapper.asResource(repo.saveAndFlush(entity));
 	}
 
+	/* (non-Javadoc)
+	 * @see com.lk.meeting.room.service.RoomService#findById(java.lang.Long)
+	 */
 	
+	public MeetingRoomResource findById(Long Id) {
+		MeetingRoomEntity entity = repo.findOne(Id);
+		return mapper.asResource(entity);
+	}
 
-	
-
+	/* (non-Javadoc)
+	 * @see com.lk.meeting.room.service.RoomService#getAvailableRooms(java.util.Date)
+	 */
+	@Override
+	public List<MeetingRoomResource> getAvailableRooms(Date bookingDateTime) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
