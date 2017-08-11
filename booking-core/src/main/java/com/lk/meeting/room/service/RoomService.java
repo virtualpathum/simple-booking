@@ -3,6 +3,9 @@
  */
 package com.lk.meeting.room.service;
 
+import java.util.Date;
+import java.util.List;
+
 import com.lk.meeting.room.resource.MeetingRoomResource;
 
 // TODO: Auto-generated Javadoc
@@ -26,5 +29,7 @@ public interface RoomService {
 	 * @return the room resource
 	 */
 	MeetingRoomResource saveOrUpdate (MeetingRoomResource resource);
+	
+	List<MeetingRoomResource> getAvailableRooms(Date bookingDateTime);
  
 }

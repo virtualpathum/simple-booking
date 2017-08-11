@@ -3,6 +3,9 @@
  */
 package com.lk.meeting.room.service.impl;
 
+import java.util.Date;
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -44,6 +47,15 @@ public class RoomServiceImpl implements RoomService {
 	public MeetingRoomResource findById(Long Id) {
 		MeetingRoomEntity entity = repo.findOne(Id);
 		return mapper.asResource(entity);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.lk.meeting.room.service.RoomService#getAvailableRooms(java.util.Date)
+	 */
+	@Override
+	public List<MeetingRoomResource> getAvailableRooms(Date bookingDateTime) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
