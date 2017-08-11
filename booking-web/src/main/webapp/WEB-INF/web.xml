@@ -6,7 +6,7 @@
   </context-param>
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>com.lk.challenge.config.RootConfig</param-value>
+    <param-value>com.lk.meeting.room.config.RootConfig</param-value>
   </context-param>
   <context-param>
     <param-name>spring.profiles.default</param-name>
@@ -24,7 +24,7 @@
     </init-param>
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>com.lk.challenge.web.config.WebMvcConfig</param-value>
+      <param-value>com.lk.meeting.room.web.WebMvcConfig</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
     <async-supported>true</async-supported>

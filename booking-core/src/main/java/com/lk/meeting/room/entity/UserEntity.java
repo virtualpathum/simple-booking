@@ -141,5 +141,13 @@ public class UserEntity extends AbstractEntity {
 		}
 		return false;
 	}
+	
+	@Override
+	public String toString() {
+		StringBuffer sb = new StringBuffer();
+		return sb.append("id = " + this.getId())
+				.append(", userName = " + this.getUserName()).toString();
+				
+	}
 
 }

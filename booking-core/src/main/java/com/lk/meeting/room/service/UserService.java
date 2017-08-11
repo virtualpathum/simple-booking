@@ -11,13 +11,7 @@ import com.lk.meeting.room.resource.UserResource;
  */
 public interface UserService {
 	
-	/**
-	 * Find by id.
-	 *
-	 * @param Id the id
-	 * @return the user resource
-	 */
-	UserResource findById(Long Id);
+	
 	
 	/**
 	 * Save or update.

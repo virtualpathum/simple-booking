@@ -23,7 +23,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "com.lk.challenge.web" })
+@ComponentScan(basePackages = { "com.lk.meeting.room.web" })
 public class WebMvcConfig extends WebMvcConfigurerAdapter{
 	
 	/** (non-Javadoc)

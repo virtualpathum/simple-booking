@@ -128,5 +128,14 @@ public class BookingEntity extends AbstractEntity {
 	public void setRoom(MeetingRoomEntity room) {
 		this.room = room;
 	}
+	
+	@Override
+	public String toString() {
+		StringBuffer sb = new StringBuffer();
+		return sb.append("id = " + this.getId())
+				.append(" , user = " + this.getUser().getId())
+				.append(" , room = " + this.getRoom().getId()).toString();
+				
+	}
 
 }

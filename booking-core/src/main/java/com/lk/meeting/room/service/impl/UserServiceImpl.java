@@ -4,6 +4,7 @@
 package com.lk.meeting.room.service.impl;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import com.lk.meeting.room.entity.UserEntity;
 import com.lk.meeting.room.mapper.UserMapper;
@@ -15,6 +16,7 @@ import com.lk.meeting.room.service.UserService;
 /**
  * The Class UserServiceImpl.
  */
+@Named("userService")
 public class UserServiceImpl implements UserService {
 	
 	/** The repo. */
@@ -25,14 +27,7 @@ public class UserServiceImpl implements UserService {
 	@Inject
 	UserMapper mapper;
 
-	/* (non-Javadoc)
-	 * @see com.lk.meeting.room.service.UserService#findById(java.lang.Long)
-	 */
-	@Override
-	public UserResource findById(Long Id) {
-		UserEntity entity = repo.findOne(Id);
-		return mapper.asResource(entity);
-	}
+	
 
 	/* (non-Javadoc)
 	 * @see com.lk.meeting.room.service.UserService#saveOrUpdate(com.lk.meeting.room.resource.UserResource)

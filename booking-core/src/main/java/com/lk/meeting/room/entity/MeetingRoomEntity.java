@@ -3,6 +3,8 @@
  */
 package com.lk.meeting.room.entity;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -48,9 +50,8 @@ public class MeetingRoomEntity extends AbstractEntity {
 	/** The booking. */
 	//One meeting room can have many bookings
 	@NotNull
-	@OneToMany(fetch = FetchType.LAZY)
-	@JoinColumn(name = "booking_id", nullable = false)
-	BookingEntity booking;
+	@OneToMany(mappedBy="room", fetch = FetchType.LAZY)
+	List<BookingEntity> bookings = new ArrayList<BookingEntity>();
 	
 	/**
 	 * Gets the id.
@@ -125,24 +126,17 @@ public class MeetingRoomEntity extends AbstractEntity {
 	}
 	
 	/**
-	 * Gets the booking.
-	 *
-	 * @return the booking
+	 * @return the bookings
 	 */
-	public BookingEntity getBooking() {
-		return booking;
+	public List<BookingEntity> getBookings() {
+		return bookings;
 	}
 
 	/**
-	 * Sets the booking.
-	 *
-	 * @param booking the new booking
+	 * @param bookings the bookings to set
 	 */
-	public void setBooking(BookingEntity booking) {
-		this.booking = booking;
-		if (null != booking && booking.getRoom() != this) {
-			booking.setRoom(this);
-		}
+	public void setBookings(List<BookingEntity> bookings) {
+		this.bookings = bookings;
 	}
 
 	/* (non-Javadoc)
@@ -170,6 +164,15 @@ public class MeetingRoomEntity extends AbstractEntity {
 			return Objects.equals(this.hashCode(), other.hashCode());
 		}
 		return false;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuffer sb = new StringBuffer();
+		return sb.append("id = " + this.getId())
+				.append(" , isProjectorAvailable = " + this.getIsProjectorAvailable())
+				.append(" , numberOfSeats = " + this.getNumberOfSeats()).toString();
+				
 	}
 	
 

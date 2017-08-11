@@ -43,4 +43,13 @@ public class BookingResource extends AbstractResource<Long> {
 		this.bookingDateTime = bookingDateTime;
 	}
 	
+	@Override
+	public String toString() {
+		StringBuffer sb = new StringBuffer();
+		return sb.append("id = " + this.getResourceId())
+				.append(" , user = " + this.getUser().getResourceId())
+				.append(" , room = " + this.getRoom().getResourceId()).toString();
+				
+	}
+	
 }

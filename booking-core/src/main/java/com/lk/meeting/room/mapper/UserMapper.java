@@ -3,7 +3,9 @@
  */
 package com.lk.meeting.room.mapper;
 
+import com.lk.meeting.room.entity.MeetingRoomEntity;
 import com.lk.meeting.room.entity.UserEntity;
+import com.lk.meeting.room.resource.MeetingRoomResource;
 import com.lk.meeting.room.resource.UserResource;
 
 import fr.xebia.extras.selma.Field;
@@ -37,4 +39,10 @@ public interface UserMapper {
 	 */
 	@Maps(withIgnoreMissing = IgnoreMissing.SOURCE)
 	UserEntity asEntity(UserResource resource);
+	
+	@Maps(withIgnoreMissing = IgnoreMissing.DESTINATION)
+	UserResource updateResource(UserEntity entity, UserResource resource);
+	
+	@Maps(withIgnoreMissing = IgnoreMissing.SOURCE)
+	UserEntity updateEntity(UserResource resource, UserEntity entity);
 }

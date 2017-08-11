@@ -40,5 +40,14 @@ public class MeetingRoomResource extends AbstractResource<Long> {
 		this.roomLocation = roomLocation;
 	}
 	
+	@Override
+	public String toString() {
+		StringBuffer sb = new StringBuffer();
+		return sb.append("id = " + this.getResourceId())
+				.append(" , isProjectorAvailable = " + this.getIsProjectorAvailable())
+				.append(" , numberOfSeats = " + this.getNumberOfSeats()).toString();
+				
+	}
+	
 	
 }

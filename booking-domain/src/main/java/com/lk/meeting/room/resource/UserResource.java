@@ -40,6 +40,13 @@ public class UserResource extends AbstractResource<Long> {
 		this.department = department;
 	} 
 	
+	@Override
+	public String toString() {
+		StringBuffer sb = new StringBuffer();
+		return sb.append("id = " + this.getResourceId())
+				.append(", userName = " + this.getUserName()).toString();
+				
+	}
 	
 
 }

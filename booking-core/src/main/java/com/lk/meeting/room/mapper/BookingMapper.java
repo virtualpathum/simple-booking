@@ -39,4 +39,10 @@ public interface BookingMapper {
 	 */
 	@Maps(withIgnoreMissing = IgnoreMissing.SOURCE)
 	BookingEntity asEntity(BookingResource resource);
+	
+	@Maps(withIgnoreMissing = IgnoreMissing.DESTINATION)
+	BookingResource updateResource(BookingEntity entity, BookingResource resource);
+	
+	@Maps(withIgnoreMissing = IgnoreMissing.SOURCE)
+	BookingEntity updateEntity(BookingResource resource, BookingEntity entity);
 }
