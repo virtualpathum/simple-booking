@@ -2,10 +2,6 @@
 
 This is an automated meeting room booking application.Provides room availability check, booking, cancellation, room and user maintenance options. 
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
 ### Prerequisites
 
 Java 8, Spring Tool Suite or Eclipse, Apache Maven, PostgreSQL 9, PgAdmin
@@ -20,9 +16,9 @@ Three modules are availabe
 * booking-core
 * booking-web
 
-Right click on each project and select configure
+Open Eclipse or STS and right click on each project and select configure
 Select convert to maven project
-You can see the converted maven projects
+You can see the converted maven projects in the Project explorer section
 Install the PostgreSQL if you don't have install it already and create a database as meeting-room
 Please update the database credentials in the SysConfig file before build the booking-core project
 ```
@@ -36,7 +32,7 @@ booking-web module contains the controller APIs which should use by the front en
 There are few unit test cases have provided to test the system configurations and the apis
 You can access them in src/test/java package in the booking-web project
 To test
-* 1. Please clean and build the booking-domain project
+* 1. First clean and build the booking-domain project
 * 2. Then clean and build the booking-core project
 * 3. Finally clean and build the booking-web project and which will execute the test cases as well 
 ```
