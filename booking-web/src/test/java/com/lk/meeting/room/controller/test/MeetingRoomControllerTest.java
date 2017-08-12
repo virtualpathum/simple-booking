@@ -16,6 +16,8 @@ import com.lk.meeting.room.web.controller.MeetingRoomController;
 /**
  * The Class MeetingRoomControllerTest.
  */
+//TODO:These test cases have develop to test the system configuration and flow of the system
+//Need to use Jmokit to mock the services
 public class MeetingRoomControllerTest extends AbstractControllerTest {
 	
 	@Inject

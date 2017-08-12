@@ -19,12 +19,13 @@ import com.lk.meeting.room.web.controller.BookingController;
 import com.lk.meeting.room.web.controller.MeetingRoomController;
 import com.lk.meeting.room.web.controller.UserController;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class BookingControllerTest.
  *
  * @author virtualpathum
  */
+//TODO:These test cases have develop to test the system configuration and flow of the system
+// Need to use Jmokit to mock the services
 public class BookingControllerTest extends AbstractControllerTest {
 	
 	Logger LOG = Logger.getLogger(BookingControllerTest.class);
