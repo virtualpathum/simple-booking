@@ -1,6 +1,6 @@
 # Simple Booking
 
-This is an automated meeting room booking application.Provides room availability check, booking, cancellation, room and user maintenance options. 
+This is an automated meeting room booking application. Provides room availability check, booking, cancellation, room and user maintenance options. 
 
 ### Prerequisites
 
