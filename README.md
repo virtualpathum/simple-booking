@@ -48,14 +48,26 @@ Once you execute the test cases it will save the sample data into the data base 
 
 
 ## Assumptions made when developing
+
 * 1. No meeting room supervisor
-* 2. Super user can override bookings
-* 3. When super user overrides, system will send notifications to the effected users who already booked the room
-* 4. Normal users cannot override the bookings
-* 5. Normal users can extend the booking time if the next time slot is availabe
-* 6. Once user cancel a booking system will send notifications to the user who booked the adjecent time slot
-* 7. All users can report issues in the meeting room
-* 8. System administrator can view the reported issues
+* 2. Not all rooms are available for all users. Only super user can view all rooms. Normal user cannot book some rooms
+* 3. Super user can override bookings
+* 4. When super user overrides, system will send notifications to the effected users who already booked the room
+* 5. Normal users cannot override the bookings
+* 6. Normal users can extend the booking time if the next time slot is availabe
+* 7. Once user cancel a booking system will send notifications to the user who booked the adjecent time slot
+* 8. All users can report issues in the meeting room
+* 9. System administrator can view the reported issues
+
+## Features implemented in this release
+
+* 1. Check available rooms by entering the date and time and get the available rooms
+* 2. Book the selected room
+* 3. Cancel Booking if needed
+* 4. Can update the booking date and time
+* 5. Can view the bookings per user
+* 6. Can view the bookings per room
+
 
 ## Features not implemented in this release
 
@@ -67,6 +79,7 @@ Once you execute the test cases it will save the sample data into the data base 
 
 
 ## Planned Enhancements
-* 1. Implement Spring Security ACL to control the user roles and permissions
+* 1. Implement spring security ACL to grant the permissions to each room instance per user to handle the room booking based on user   
+     roles
 * 2. Use spring security to handle the user authentication and authorization
 
