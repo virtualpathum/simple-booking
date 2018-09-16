@@ -2,6 +2,9 @@
 
 This is an automated meeting room booking application. Provides room availability check, booking, cancellation, room and user maintenance options. 
 
+Developed using Spring, Java 8
+
+
 ### Prerequisites
 
 Java 8, Spring Tool Suite or Eclipse, Apache Maven, PostgreSQL 9, PgAdmin
